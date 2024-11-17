@@ -1,6 +1,7 @@
 import React from 'react';
 import { AiFillStar, AiOutlineEye } from 'react-icons/ai';
 import { FaFireAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ArticleCard = ({ news }) => {
   const { title, author, rating, total_view, thumbnail_url, others_info } = news;
@@ -21,7 +22,7 @@ const ArticleCard = ({ news }) => {
       <div className="p-4 space-y-2">
         {/* Title */}
         <h2 className="text-xl font-bold">{title}</h2>
-
+        <Link to={`/news/${news._id}`} className='text-red-500 text-xl btn btn-accent'>Read More</Link>
         {/* Author Info */}
         <div className="flex items-center space-x-3">
           <img src={author.img} alt={author.name} className="w-8 h-8 rounded-full" />
